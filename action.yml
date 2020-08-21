@@ -1,0 +1,14 @@
+name: 'Upload static pictures to percy.io'
+branding:
+  icon: 'grid'
+  color: 'green'
+inputs:
+  inFolder:
+    description: 'The path to the input folder with the pictures for comparison'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.inFolder }}
+
